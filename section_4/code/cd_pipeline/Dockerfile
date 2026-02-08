@@ -1,8 +1,8 @@
-# base image
-FROM alpine:3.7
+# base image - Alpine 3.18+ required for Python 3.8+ (Flask 2.3.x)
+FROM alpine:3.18
 
 # Install python 3 and pip
-RUN apk add --update python3
+RUN apk add --no-cache python3 py3-pip
 
 # Install Python modules needed by the Python app
 COPY requirements.txt /usr/src/app/
